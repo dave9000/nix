@@ -76,7 +76,7 @@
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       git
-      vscode
+      file
       awscli2
       aws-sam-cli
       aws-azure-login
@@ -98,6 +98,11 @@
   users.defaultUserShell = pkgs.zsh;
   virtualisation.docker.enable = true;
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -107,7 +112,6 @@
     fwupd
     zsh
     wget
-    neovim
  ];
 
   # Some programs need SUID wrappers, can be configured further or are
