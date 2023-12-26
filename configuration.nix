@@ -76,7 +76,6 @@
     extraGroups = [ "networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       git
-      file
       awscli2
       aws-sam-cli
       aws-azure-login
@@ -86,7 +85,6 @@
       python3
       python311Packages.pip
       vlc
-      ripgrep
       aws-azure-login
       xmind
       teams-for-linux
@@ -109,8 +107,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    tmux
     fwupd
-    zsh
+    ripgrep
+    file
     wget
  ];
 
